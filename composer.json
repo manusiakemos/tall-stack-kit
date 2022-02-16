@@ -1,0 +1,65 @@
+{
+    "name": "manusiakemos/tall-stack-kit",
+    "description": "TALL Stack Blade Component KIT",
+    "keywords": [
+        "manusiakemos",
+        "laravel",
+        "tall-stack-kit"
+    ],
+    "homepage": "https://github.com/manusiakemos/tall-stack-kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hafiz Nugraha",
+            "email": "manusiakemos@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Manusiakemos\\TallStackKit\\": "src",
+            "Manusiakemos\\TallStackKit\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Manusiakemos\\TallStackKit\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Manusiakemos\\TallStackKit\\TallStackKitServiceProvider"
+            ],
+            "aliases": {
+                "TallStackKit": "Manusiakemos\\TallStackKit\\Facades\\TallStackKit"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
