@@ -10,6 +10,7 @@
 You can install the package via composer:
 
 ```bash
+composer require manusiakemos/tall-stack-kit
 ```
 
 

@@ -15,6 +15,6 @@ class Button extends Component
 
     public function render()
     {
-        return view('tall-stack-kit::ui.button');
+        return view('kit::button');
     }
 }

@@ -18,7 +18,7 @@ class TallStackKitServiceProvider extends PackageServiceProvider
 
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'tall-stack-kit');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'kit');
     }
 
     private function bootPublishing(): void
@@ -33,8 +33,8 @@ class TallStackKitServiceProvider extends PackageServiceProvider
 
     private function bootBladeComponents()
     {
-        $this->loadViewComponentsAs('tall-stack-kit', [
-            // Alert::class,
+        $this->loadViewComponentsAs('kit', [
+            Modal::class,
             Button::class,
         ]);
     }
