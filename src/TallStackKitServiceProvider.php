@@ -5,6 +5,7 @@ namespace Manusiakemos\TallStackKit;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Manusiakemos\TallStackKit\Commands\TallStackKitCommand;
+use TallStackKit\Components\SelectSearch;
 
 class TallStackKitServiceProvider extends PackageServiceProvider
 {
@@ -25,7 +26,7 @@ class TallStackKitServiceProvider extends PackageServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                // __DIR__.'/Components/' => app_path('View/Components/TallStackKit'),
+                __DIR__.'/View/Components/' => app_path('View/Components'),
                 __DIR__.'/../resources/views' => $this->app->resourcePath('views/vendor/tall-stack-kit'),
             ], 'tall-stack-kit-view-components');
         }
@@ -34,6 +35,15 @@ class TallStackKitServiceProvider extends PackageServiceProvider
     private function bootBladeComponents()
     {
         $this->loadViewComponentsAs('kit', [
+            FormGroup::class,
+            Radio::class,
+            Textarea::class,
+            Toggle::class,
+            Input::class,
+            Tags::class,
+            SelectSearch::class,
+            Tabs::class,
+            Breadcrumb::class,
             Modal::class,
             Button::class,
         ]);

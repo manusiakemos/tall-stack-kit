@@ -1,6 +1,6 @@
 <?php
 
-namespace TallStackKit\Components;
+namespace Manusiakemos\TallStackKit\View\Components;
 
 use Illuminate\View\Component;
 
