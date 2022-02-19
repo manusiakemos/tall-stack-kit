@@ -4,7 +4,7 @@ namespace Manusiakemos\TallStackKit\View\Components;
 
 use Illuminate\View\Component;
 
-class Text extends Component
+class Input extends Component
 {
     public function render()
     {
