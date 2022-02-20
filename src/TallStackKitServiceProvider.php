@@ -19,18 +19,27 @@ class TallStackKitServiceProvider extends PackageServiceProvider
         $this->bootBladeComponents();
     }
 
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/tall-stack-kit.php', 'tall-stack-kit');
+    }
+
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'kit');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'kit');
     }
 
     private function bootPublishing(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/View/Components/' => app_path('View/Components'),
-                __DIR__.'/../resources/views' => $this->app->resourcePath('views/vendor/tall-stack-kit'),
+                __DIR__ . '/View/Components/' => app_path('View/Components'),
+                __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/tall-stack-kit'),
             ], 'tall-stack-kit-view-components');
+
+            $this->publishes([
+                __DIR__.'/../config/tall-stack-kit.php' => config_path('tall-stack-kit.php'),
+              ], 'tall-stack-kit-config');
         }
     }
 

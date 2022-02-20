@@ -1,5 +1,7 @@
 <?php
-// config for Manusiakemos/TallStackKit
 return [
-
+    'trix' => [
+        #show button files in trix editor
+        'files' =>  false
+    ]
 ];
