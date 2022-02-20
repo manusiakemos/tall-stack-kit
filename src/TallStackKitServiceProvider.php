@@ -5,6 +5,8 @@ namespace Manusiakemos\TallStackKit;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Manusiakemos\TallStackKit\Commands\TallStackKitCommand;
+use Manusiakemos\TallStackKit\View\Components\FileUpload;
+use Manusiakemos\TallStackKit\View\Components\Toast;
 use TallStackKit\Components\SelectSearch;
 
 class TallStackKitServiceProvider extends PackageServiceProvider
@@ -35,6 +37,10 @@ class TallStackKitServiceProvider extends PackageServiceProvider
     private function bootBladeComponents()
     {
         $this->loadViewComponentsAs('kit', [
+            Trix::class,
+            Toast::class,
+            Alert::class,
+            FileUpload::class,
             FormGroup::class,
             Radio::class,
             Textarea::class,
