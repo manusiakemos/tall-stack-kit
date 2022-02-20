@@ -2,14 +2,9 @@
 
 namespace Manusiakemos\TallStackKit;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Manusiakemos\TallStackKit\Commands\TallStackKitCommand;
-use Manusiakemos\TallStackKit\View\Components\FileUpload;
-use Manusiakemos\TallStackKit\View\Components\Toast;
-use TallStackKit\Components\SelectSearch;
+use Illuminate\Support\ServiceProvider;
 
-class TallStackKitServiceProvider extends PackageServiceProvider
+class TallStackKitServiceProvider extends ServiceProvider
 {
 
     public function boot(): void
@@ -22,6 +17,9 @@ class TallStackKitServiceProvider extends PackageServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/tall-stack-kit.php', 'tall-stack-kit');
+        $this->app->singleton('tall-stack-kit', function () {
+            return new TallStackKit;
+        });
     }
 
     private function bootResources(): void
@@ -62,20 +60,5 @@ class TallStackKitServiceProvider extends PackageServiceProvider
             Modal::class,
             Button::class,
         ]);
-    }
-
-    public function configurePackage(Package $package): void
-    {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('tall-stack-kit')
-            // ->hasConfigFile()
-            ->hasViews()
-            // ->hasMigration('create_tall-stack-kit_table')
-            ->hasCommand(TallStackKitCommand::class);
     }
 }
