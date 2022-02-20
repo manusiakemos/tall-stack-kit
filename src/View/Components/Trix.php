@@ -4,7 +4,7 @@ namespace Manusiakemos\TallStackKit\View\Components;
 
 use Illuminate\View\Component;
 
-class Alert extends Component
+class Trix extends Component
 {
     public function render()
     {
