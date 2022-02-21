@@ -17,7 +17,7 @@
         }, duration)
     });"
     {{ $attributes->merge([
-        'class' => 'z-50 h-16 w-64 text-sm text-left h-12 mb-4 p-4 w-full flex items-center justify-between absolute right-10 bottom-0',
+        'class' => 'z-50 h-16 w-64 text-sm text-left h-12 mb-4 p-4 w-full flex items-center justify-between fixed right-10 bottom-0',
     ]) }}>
     <div class="flex gap-4">
         <div>

@@ -11,7 +11,7 @@
 @endpush
 
 @push('scripts')
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js"></script>
+    <script data-turbolinks-eval="false" data-turbo-eval="false" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js"></script>
 @endpush
 
 
