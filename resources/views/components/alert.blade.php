@@ -24,3 +24,4 @@
         <span class="flex items-center text-lg fi-rr-cross-circle cursor-pointer" x-on:click="show = false"></span>
     </div>
 </div>
+
