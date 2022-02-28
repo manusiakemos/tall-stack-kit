@@ -31,13 +31,13 @@ class TallStackKitServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/View/Components/' => app_path('View/Components/TallStackKit'),
-                __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/tall-stack-kit'),
-            ], 'tall-stack-kit-view-components');
+                __DIR__ . '/View/Components/' => app_path('View/Components/Kit'),
+                __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/kit'),
+            ], 'kit-view-components');
 
             $this->publishes([
                 __DIR__.'/../config/tall-stack-kit.php' => config_path('tall-stack-kit.php'),
-              ], 'tall-stack-kit-config');
+              ], 'kit-config');
         }
     }
 
