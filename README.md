@@ -7,7 +7,7 @@
 
 ## Documentation
 
-[https://manusiakemos.my.id/kit/installation](Read Documentation Here)
+https://manusiakemos.my.id/kit/installation
 
 ## Contributing
 
