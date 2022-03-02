@@ -1,5 +1,5 @@
 <nav class="p-3 mb-3 rounded-xl shadow bg-white dark:bg-gray-700">
-    <ul class="flex items-center py-1 text-gray-700 dark:text-white text-sm lg:text-base">
+    <ul class="flex flex-wrap items-center py-1 text-gray-700 dark:text-white text-sm lg:text-base">
         @foreach ($items as $item)
             @if (!$item['active'])
                 <li class="flex items-center">
