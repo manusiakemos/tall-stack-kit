@@ -22,10 +22,11 @@
 - [x] textarea
 - [x] trix editor
 - [x] radio
-- [ ] tiptap editor
+- [ ] badge
 - [ ] checkbox
 - [ ] password input(with button icon to show password)
 - [ ] accordion dropodown
+- [ ] tiptap editor
 
 ## Documentation
 

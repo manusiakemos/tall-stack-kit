@@ -31,6 +31,7 @@ class TallStackKitServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
+                __DIR__ . '/View/Components/' => app_path('View/Components/Kit'),
                 __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/kit'),
             ], 'kit-view-components');
 
