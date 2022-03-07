@@ -1,3 +1,4 @@
+@props(['options', 'optionValue', 'optionText'])
 <div class="flex">
     @foreach ($options as $key => $item)
         @php($id = \Illuminate\Support\Str::random(8))

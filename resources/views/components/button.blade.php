@@ -1,3 +1,4 @@
+@props(['variant'])
 @if ($variant == 'rounded')
     <button
         {{ $attributes->merge([

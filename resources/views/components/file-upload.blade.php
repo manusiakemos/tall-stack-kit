@@ -1,3 +1,4 @@
+@props(['id'])
 <div>
     <div class="cursor-pointer p-3 border border-dashed border-gray-500 rounded">
         <label class="block w-full cursor-pointer" for="{!! $attributes->get('id') !!}">

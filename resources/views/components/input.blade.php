@@ -1,3 +1,4 @@
+@props(['id'])
 <input
     autocomplete="off"
     {!! $attributes->merge([

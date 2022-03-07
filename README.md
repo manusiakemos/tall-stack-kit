@@ -22,6 +22,7 @@
 - [x] textarea
 - [x] trix editor
 - [x] radio
+- [ ] confirm
 - [ ] badge
 - [ ] checkbox
 - [ ] password input(with button icon to show password)
@@ -44,6 +45,10 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 - [Hafiz Nugraha](https://github.com/manusiakemos)
 - [All Contributors](../../contributors)
+
+
+
+> Be aware that the end user needs to *update the namespaces* of the published component class and update the *render()* method to reference the Blade components of the Laravel application directly, instead of referencing the package namespace. Additionally, the Blade component no longer has to be namespaced since it was published to the Laravel application itself
 
 ## License
 

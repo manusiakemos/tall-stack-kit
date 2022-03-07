@@ -1,3 +1,4 @@
+@props(['id', 'maxWidth'])
 @php
     $id = $id ?? $attributes->wire('model')->value();
     $maxWidth = [
@@ -6,7 +7,9 @@
         'lg' => 'sm:max-w-lg',
         'xl' => 'sm:max-w-xl',
         '2xl' => 'sm:max-w-2xl',
-    ][$maxWidth ?? '2xl'];
+        '4xl' => 'sm:max-w-4xl',
+        '6xl' => 'sm:max-w-6xl',
+    ][$maxWidth ?? '4xl'];
 @endphp
 
 <div wire:ignore.self
