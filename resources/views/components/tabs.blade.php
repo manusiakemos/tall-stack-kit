@@ -1,4 +1,3 @@
-@props(['tabHeaders'])
 <div class="z-0 text-gray-700 dark:text-gray-300">
     <div x-data="{
             tabHeaders: @js($attributes->get('tab-headers')),
