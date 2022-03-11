@@ -26,7 +26,7 @@
 @push("scripts")
     <script type="text/javascript"
             data-turbolinks-eval="false"  data-turbo-eval="false"
-            src="https://maps.google.com/maps/api/js?libraries=places&key={{config('app.googlemap_api_key')}}"></script>
+            src="https://maps.google.com/maps/api/js?libraries=places&key={{config('tall-stack-kit.googlemap_api_key')}}"></script>
     <script  data-turbolinks-eval="false"  data-turbo-eval="false"
              src="{{ asset("vendor/location-picker/location-picker.js") }}"></script>
     <script  data-turbolinks-eval="false"  data-turbo-eval="false">
