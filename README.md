@@ -25,6 +25,8 @@
 - [x] confirm
 - [x] checkbox
 - [x] custom select
+- [x] location picker google maps
+- [ ] location picker mapbox
 - [ ] badge
 - [ ] password input(with button icon to show password)
 - [ ] accordion dropodown
