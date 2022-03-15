@@ -70,11 +70,11 @@
 
         <!-- Outline Button -->
 
-        <div class="absolute right-0 top-0">
-            <x-kit.button variant="rounded" x-show="!show" x-on:click="selectedText = ''; selected = '';"
-                class="text-primary-500 dark:text-primary-300 font-sans text-sm">
+        <div class="absolute right-0 px-3 inset-y-0" x-show="selectedText">
+            <button type="button" x-show="!show" x-on:click="selectedText = ''; selected = '';"
+                    class="text-primary-500 dark:text-primary-300 font-sans text-sm">
                 clear
-            </x-kit.button>
+            </button>
         </div>
 
     </div>
