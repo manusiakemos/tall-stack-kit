@@ -45,7 +45,7 @@
     </button>
 
 @elseif($variant == 'link')
-    <a {{ $attributes->merge(['class' => 'py-2']) }}>
+    <a {{ $attributes->merge(['class' => 'm-1 py-2 px-4']) }}>
         {{ $slot }}
     </a>
 @endif
