@@ -36,6 +36,10 @@ class TallStackKitServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/tall-stack-kit.php' => config_path('tall-stack-kit.php'),
             ], 'kit-config');
+
+            $this->publishes([
+                __DIR__.'/../resources/assets' => public_path('vendor'),
+              ], 'kit-assets');
         }
     }
 }

@@ -26,11 +26,12 @@
 - [x] checkbox
 - [x] custom select
 - [x] location picker google maps
+- [ ] tiptap editor
 - [ ] location picker mapbox
 - [ ] badge
 - [ ] password input(with button icon to show password)
 - [ ] accordion dropodown
-- [ ] tiptap editor
+- [ ] menu builder draggable
 
 ## Documentation
 
