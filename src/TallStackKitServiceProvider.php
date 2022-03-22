@@ -31,7 +31,7 @@ class TallStackKitServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/kit'),
-            ], 'kit-view-components');
+            ], 'kit-components');
 
             $this->publishes([
                 __DIR__ . '/../config/tall-stack-kit.php' => config_path('tall-stack-kit.php'),
@@ -40,6 +40,10 @@ class TallStackKitServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor'),
               ], 'kit-assets');
+
+              $this->publishes([
+                __DIR__.'/../resources/tall-stack-kit' => resource_path('vendor/tall-stack-kit'),
+              ], 'kit-resources');
         }
     }
 }

@@ -10,28 +10,52 @@
 ![image-20220228224109004](https://tva1.sinaimg.cn/large/e6c9d24egy1gztlu5ykp3j21rq0cqq43.jpg)
 
 - [x] button
+
 - [x] modal
+
 - [x] alert & toast
+
 - [x] breadcrumb
+
 - [x] tabs
+
 - [x] input & form group
+
 - [x] file upload
+
 - [x] select search (livewire clone for select2)
+
 - [x] tags (livewire clone for selectize tags)
+
 - [x] toggle
+
 - [x] textarea
+
 - [x] trix editor
+
 - [x] radio
+
 - [x] confirm
+
 - [x] checkbox
+
 - [x] custom select
+
 - [x] location picker google maps
-- [ ] tiptap editor
-- [ ] location picker mapbox
-- [ ] badge
-- [ ] password input(with button icon to show password)
-- [ ] accordion dropodown
+
+- [x] tiptap editor
+
 - [ ] menu builder draggable
+
+- [ ] accordion dropdown
+
+- [ ] badge
+
+- [ ] password input(with button icon to show password)
+
+- [ ] location picker mapbox
+
+  
 
 ## Documentation
 
