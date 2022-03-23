@@ -11,7 +11,7 @@
             }
     "
 >
-    <x-kit.input placeholder="{{ $attributes->get('placeholder') ?? '' }}" x-model="search"/>
+    <x-kit::input placeholder="{{ $attributes->get('placeholder') ?? '' }}" x-model="search"/>
 
     <button type="button" x-on:click="items.push(search); search = '';"
             class="rounded px-3 py-1 bg-primary-500 text-white mt-3" x-show="search.length > 0">
