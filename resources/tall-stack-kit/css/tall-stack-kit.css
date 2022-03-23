@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-
+    .heading{
+        @apply uppercase text-lg font-semibold dark:text-gray-400 text-gray-500 font-sans tracking-wide;
+    }
 
     .ProseMirror{
-        @apply prose focus:outline-none dark:prose-invert prose-sm min-w-full w-full bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-6 py-3 min-h-[400px];
+        @apply prose focus:outline-none dark:prose-invert prose-sm overflow-scroll
+        min-w-full w-full bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-6 py-3 min-h-[400px] max-h-[600px];
     }
 
     .selectedCell {
@@ -25,6 +28,10 @@
 
     .resize-cursor{
         @apply cursor-move;
+    }
+
+    .is-active{
+        @apply rounded-xl border-2 border-gray-500 dark:border-gray-300;
     }
 
     .tableWrapper{
