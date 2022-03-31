@@ -1,13 +1,13 @@
-@props(['options'])
 <div
-    {!! $attributes->merge(['class'=>'relative']) !!}
     wire:ignore
+    {!! $attributes->merge(['class'=>'relative']) !!}
     x-data="{
+        select2 : null,
         selected: @entangle($attributes->wire('model')),
-        options: @js($options)
     }"
     x-init="
         $nextTick(() => {
+
             this.select2 = $($refs.select).select2({
                 dropdownParent: $('#{{$attributes->get('dropdown-parent')}}')
             });
@@ -17,9 +17,14 @@
             $watch('selected', (value) => {
                 this.select2.val(value).trigger('change');
             });
+
+            setTimeout(()=>{
+               this.select2.val(null).trigger('change');
+            },1000)
         });
     ">
     <select
+        data-placeholder="{{$attributes->get('placeholder')}}"
         x-model="selected"
         x-ref="select">
         {{$slot}}
