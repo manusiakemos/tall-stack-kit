@@ -21,7 +21,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "illuminate/support": "^8.0",
-        "unisharp/laravel-filemanager" : "^2.4"
+        "unisharp/laravel-filemanager" : "^2.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
