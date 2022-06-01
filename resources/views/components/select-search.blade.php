@@ -5,7 +5,7 @@
         options: @js($options),
         show: false,
         search: '',
-        selected: @entangle($attributes -> wire('model')),
+        selected: @entangle($attributes->wire('model')),
         selectedText: '',
         disabled: false,
         filteredOptions() {
@@ -62,12 +62,12 @@
     <div class="relative flex items-center">
         <div x-text="selectedText" placeholder="{{ $placeholder ?? '' }}" autocomplete="off"
             x-on:click="show = true; search = '';" id="selected-{!! $attributes->get('id') !!}"
-            class="mt-1 flex items-center w-full rounded-md dark:bg-gray-600 bg-gray-200 h-10
+            class="flex items-center w-full rounded-md dark:bg-gray-600 bg-gray-200 h-10
                focus:border-secondary-400 focus:bg-gray-200 dark:focus:bg-gray-800 focus:ring-0
                text-sm text-gray-700 dark:text-gray-200 px-3">
         </div>
 
-        <div class="absolute right-0 px-3" x-show="selectedText">
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 gap-x-2" x-show="selectedText">
             <button type="button" x-show="!show" x-on:click="selectedText = ''; selected = '';"
                 class="text-primary-500 dark:text-primary-300 font-sans text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -77,7 +77,7 @@
                 </svg>
             </button>
         </div>
-        <div class="absolute right-0 px-3" x-show="!selectedText">
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 gap-x-2" x-show="!selectedText">
             <div type="button" class="text-gray-500 dark:text-gray-400 font-sans text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path fill="none" d="M0 0h24v24H0z" />
@@ -89,24 +89,31 @@
     </div>
 
 
-    <input type="text" x-show="show" x-model="search" placeholder="{{ $placeholder ?? '' }}" autocomplete="off"
-        x-on:click="show = true; search = '';" id="search-{!! $attributes->get('id') !!}"
-        class="mt-1 block w-full rounded-md dark:bg-gray-600 bg-gray-200 border-transparent
+    <div class="bg-white dark:bg-gray-900" x-show="show" x-transition>
+        <div class="px-2">
+            <div class="p-3">
+                <input type="text" x-model="search" placeholder="{{ $placeholder ?? '' }}" autocomplete="off"
+                    x-on:click="show = true; search = '';" id="search-{!! $attributes->get('id') !!}"
+                    class="block w-full rounded-md dark:bg-gray-600 bg-gray-200 border-transparent
                       focus:border-secondary-400 focus:bg-gray-200 dark:focus:bg-gray-800 focus:ring-0
                       text-sm text-gray-700 dark:text-gray-200">
+            </div>
+        </div>
 
-    <input type="hidden" x-model="selected" x-on:click="show = true; search = '';">
+        <input type="hidden" x-model="selected" x-on:click="show = true; search = '';">
 
-    <ul x-show="show" x-transition
-        class="relative inset-x-0 top-0 bg-white shadow dark:bg-gray-900 z-50
-                cursor-pointer rounded-md min-h-[80px] max-h-[160px]
-                overflow-y-scroll overflow-x-hidden">
-        <template x-for="item in filteredOptions">
-            <li class="text-xs text-gray-700 dark:text-gray-300 border-b border-gray-300 dark:border-gray-800
+        <ul
+            class="relative inset-x-0 top-0 bg-white shadow dark:bg-gray-900 z-50
+                cursor-pointer rounded-md max-h-60 overflow-y-auto overflow-x-hidden">
+            <template x-for="item in filteredOptions">
+                <li
+                    :class="{'bg-gray-200 dark:bg-gray-700': item.{!! $optionValue !!} == selected}"
+                    class="text-xs text-gray-700 dark:text-gray-300 border-b border-gray-300 dark:border-gray-800
                        hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm z-20 p-3"
-                x-on:click="search = item.{!! $optionText !!};selected = item.{!! $optionValue !!};show = false;"
-                x-text="item.{{ $optionText }}">
-            </li>
-        </template>
-    </ul>
+                    x-on:click="search = item.{!! $optionText !!};selected = item.{!! $optionValue !!};show = false;"
+                    x-text="item.{{ $optionText }}">
+                </li>
+            </template>
+        </ul>
+    </div>
 </div>
