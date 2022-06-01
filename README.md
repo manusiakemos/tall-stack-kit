@@ -45,6 +45,8 @@
 
 - [x] tiptap editor
 
+- [ ] select search multi select
+
 - [ ] menu builder draggable
 
 - [ ] accordion dropdown
