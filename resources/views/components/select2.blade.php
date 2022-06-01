@@ -7,9 +7,9 @@
     }"
     x-init="
         $nextTick(() => {
-
             this.select2 = $($refs.select).select2({
-                dropdownParent: $('#{{$attributes->get('dropdown-parent')}}')
+                dropdownParent: $('#{{$attributes->get('dropdown-parent')}}'),
+                placeholder: '{{$attributes->get('placeholder') ?? 'Select an option'}}',
             });
             this.select2.on('select2:select', (event) => {
                 selected = event.target.value;
@@ -17,16 +17,14 @@
             $watch('selected', (value) => {
                 this.select2.val(value).trigger('change');
             });
-
-            setTimeout(()=>{
-               this.select2.val(null).trigger('change');
-            },1000)
         });
     ">
     <select
-        data-placeholder="{{$attributes->get('placeholder')}}"
         x-model="selected"
         x-ref="select">
+        <option value="">
+            {{ $attributes->get('placeholder') ?? 'choose one' }}
+        </option>
         {{$slot}}
     </select>
 </div>
