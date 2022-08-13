@@ -1,9 +1,10 @@
 import Alpine from "alpinejs";
+import mask from '@alpinejs/mask'
 
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
-import {Editor} from "@tiptap/core";
+import { Editor } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import LinkExtension from "@tiptap/extension-link";
 import Highlight from "@tiptap/extension-highlight";
@@ -24,14 +25,14 @@ document.addEventListener("alpine:init", () => {
             editor: null,
             content: content,
             updatedAt: Date.now(),
-            iframe:{
-              src:'',
-              width: 500,
-              height: 500,
+            iframe: {
+                src: '',
+                width: 500,
+                height: 500,
             },
             active: {
-                undo:false,
-                redo:false,
+                undo: false,
+                redo: false,
                 heading1: false,
                 heading2: false,
                 heading3: false,
@@ -39,27 +40,27 @@ document.addEventListener("alpine:init", () => {
                 bold: false,
                 italic: false,
                 underline: false,
-                highlight:false,
-                paragraph:false,
-                orderedList:false,
-                bulletList:false,
-                image:false,
-                link:false,
-                strike:false,
-                blockquote:false,
-                table:false,
-                alignLeft:false,
-                alignRight:false,
-                alignCenter:false,
-                alignJustify:false,
-                iframe:false,
-                embedFile:false,
-                code:false,
+                highlight: false,
+                paragraph: false,
+                orderedList: false,
+                bulletList: false,
+                image: false,
+                link: false,
+                strike: false,
+                blockquote: false,
+                table: false,
+                alignLeft: false,
+                alignRight: false,
+                alignCenter: false,
+                alignJustify: false,
+                iframe: false,
+                embedFile: false,
+                code: false,
             },
             lfm(id, type, options) {
-                if (type === 'file'){
-                   var width = window.prompt("width:", "500");
-                   var height = window.prompt("height:", "500");
+                if (type === 'file') {
+                    var width = window.prompt("width:", "500");
+                    var height = window.prompt("height:", "500");
                 }
                 let route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
                 window.open(route_prefix + '?type=' + type || 'file', 'FileManager', 'width=700,height=600');
@@ -68,30 +69,30 @@ document.addEventListener("alpine:init", () => {
                     let file_path = items.map(function (item) {
                         return item.url;
                     }).join(',');
-                    if (type === 'image'){
+                    if (type === 'image') {
                         _this.setImage(file_path);
-                    }else{
-                        _this.setEmbedFileUpload(file_path, width,height);
+                    } else {
+                        _this.setEmbedFileUpload(file_path, width, height);
                     }
                 };
             },
             uploadImage(route_prefix) {
-                this.lfm('lfm', 'image', {prefix: route_prefix});
+                this.lfm('lfm', 'image', { prefix: route_prefix });
             },
-            uploadFile(route_prefix){
-                this.lfm('lfm', 'file', {prefix: route_prefix});
+            uploadFile(route_prefix) {
+                this.lfm('lfm', 'file', { prefix: route_prefix });
             },
             setImage(url) {
                 if (url) {
-                    Alpine.raw(this.editor).chain().focus().setImage({src: url}).run();
+                    Alpine.raw(this.editor).chain().focus().setImage({ src: url }).run();
                 } else {
                     console.log('image url not found');
                 }
             },
-            setEmbedFileUpload(url, width, height){
+            setEmbedFileUpload(url, width, height) {
 
                 if (url) {
-                    Alpine.raw(this.editor).chain().focus().setEmbedFile({ src: url, width:width, height:height}).run();
+                    Alpine.raw(this.editor).chain().focus().setEmbedFile({ src: url, width: width, height: height }).run();
                 } else {
                     console.log('image url not found');
                 }
@@ -104,7 +105,7 @@ document.addEventListener("alpine:init", () => {
                 }
             },
             toggleHeading(level) {
-                Alpine.raw(this.editor).chain().toggleHeading({level}).focus().run();
+                Alpine.raw(this.editor).chain().toggleHeading({ level }).focus().run();
             },
             toggleBold() {
                 // this.toggleClass('bold');
@@ -199,28 +200,28 @@ document.addEventListener("alpine:init", () => {
             redo() {
                 Alpine.raw(this.editor).chain().redo().focus().run();
             },
-            toggleTextAlign(type){
+            toggleTextAlign(type) {
                 Alpine.raw(this.editor).chain().focus().setTextAlign(type).run();
             },
-            toggleCode(){
+            toggleCode() {
                 Alpine.raw(this.editor).chain().toggleCode().focus().run();
             },
-            setIframe(){
+            setIframe() {
                 let url = window.prompt('URL');
                 let width = window.prompt('width');
                 let height = window.prompt('height');
 
-                Alpine.raw(this.editor).chain().focus().setIframe({ src: url, width:width, height:height}).run();
+                Alpine.raw(this.editor).chain().focus().setIframe({ src: url, width: width, height: height }).run();
             },
-            setTippy(){
+            setTippy() {
                 Object.entries(this.active).forEach(item => {
                     let title = null;
                     let el = document.querySelector(`#${item[0]}-btn`);
-                    if (el){
-                       title = el.getAttribute('data-title');
+                    if (el) {
+                        title = el.getAttribute('data-title');
                     }
-                    if (title === null){
-                        title =  item[0];
+                    if (title === null) {
+                        title = item[0];
                     }
                     tippy(`#${item[0]}-btn`, {
                         content: title,
@@ -289,14 +290,14 @@ document.addEventListener("alpine:init", () => {
                         _this.active.iframe = editor.isActive('iframe');
                         _this.active.code = editor.isActive('code');
                     },
-                    onUpdate({editor}) {
+                    onUpdate({ editor }) {
                         _this.updatedAt = Date.now();
                         _this.content = editor.getHTML();
                     },
-                    onSelectionUpdate: ( {editor}) => {
+                    onSelectionUpdate: ({ editor }) => {
                         _this.updatedAt = Date.now();
                     },
-                    onFocus : ({editor, event}) =>{
+                    onFocus: ({ editor, event }) => {
 
                     }
                 });
@@ -304,12 +305,14 @@ document.addEventListener("alpine:init", () => {
         };
     });
 });
-document.querySelectorAll('[data-tippy-toggle="tippy"]').forEach((tippyEl)=>{
+document.querySelectorAll('[data-tippy-toggle="tippy"]').forEach((tippyEl) => {
     let title = tippyEl.getAttribute('data-tippy-title');
     tippy(tippyEl, {
         content: title,
     });
 });
+
+Alpine.plugin(mask)
 
 window.Alpine = Alpine;
 Alpine.start();
