@@ -1,11 +1,8 @@
 @props(['inputId', 'textLabel', 'errorName'])
 <div class="w-full mb-3">
-    <label for="{{ $inputId }}"
-        class="text-xs font-bold capitalize text-gray-700 dark:text-gray-300">{{ $textLabel }}</label>
+    <x-kit::label for="{{ $inputId }}">{{ $textLabel }}</x-kit::label>
 
     {{ $slot }}
 
-    @error($errorName)
-        <div class="text-danger-500 dark:text-danger-400 font-normal text-sm py-1">{{ $message }}</div>
-    @enderror
+    <x-kit::error :error-name="$errorName"></x-kit::error>
 </div>
