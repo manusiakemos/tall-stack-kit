@@ -77,7 +77,7 @@ $this->image->storeAs('uploads', $filename, 'public');
 <x-kit::file-upload id="image" wire:model.defer="image"/>
 ```
 
-## Tiptap Editor
+## Tiptap Livewire Editor
 
 ```php
 public string $content;
