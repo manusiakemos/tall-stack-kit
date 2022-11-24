@@ -1,27 +1,31 @@
 @props(['items'])
-<nav class="p-3 mb-3 rounded-xl shadow bg-white dark:bg-gray-700">
-    <ul class="flex flex-wrap items-center py-1 text-gray-700 dark:text-white text-sm gap-1">
+<!-- Breadcrumb -->
+<nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+     aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
         @foreach ($items as $item)
             @if (!$item['active'])
-                <li class="flex items-center">
-                    <a href="{{ $item['link'] }}" class="hover:text-primary-300 text-primary-500 rounded-xl">
+                <li class="inline-flex items-center">
+                    <a href="{{ $item['link'] }}"
+                       class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                         {{ $item['title'] }}
                     </a>
                 </li>
             @else
-                <li class="flex items-center">
-                    <a href="{{ $item['link'] }}"
-                       class="hover:text-primary-300 text-gray-500 rounded-xl">
-                        {{ $item['title'] }}
-                    </a>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <span class="text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">  {{ $item['title'] }}</span>
+                    </div>
                 </li>
             @endif
             @if (!$loop->last)
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z"/>
-                    <path class="fill-gray-300 dark:fill-gray-500" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/>
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"></path>
                 </svg>
             @endif
         @endforeach
-    </ul>
+    </ol>
 </nav>
