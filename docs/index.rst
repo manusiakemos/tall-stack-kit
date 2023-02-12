@@ -18,4 +18,4 @@ SliderComponent.php code::
         $filename = $this->image->hashName();
         $this->image->storeAs('uploads', $filename, 'public');  
     }
-:: rst
+.. code-block:: rst
