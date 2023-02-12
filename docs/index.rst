@@ -5,6 +5,8 @@ File Upload Example
 -----------------
 
 SliderComponent.php code::
+    
+.. code-block:: rst
     use WithFileUploads;
     public $image;
 
@@ -18,4 +20,3 @@ SliderComponent.php code::
         $filename = $this->image->hashName();
         $this->image->storeAs('uploads', $filename, 'public');  
     }
-.. code-block:: rst
