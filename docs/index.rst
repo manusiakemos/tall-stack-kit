@@ -4,8 +4,10 @@ Tall Stack Kit Docs
 File Upload Example
 -----------------
 
-SliderComponent.php
-``
-use WithFileUploads;
-public $image;
-``
+A cool bit of code::
+
+   Some cool Code
+
+.. code-block:: rst
+
+   A bit of **rst** which should be *highlighted* properly.
