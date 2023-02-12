@@ -7,7 +7,7 @@ File Upload Example
 SliderComponent.php::
     use WithFileUploads;
     public $image;
-.. code-block:: rst
+
     public function uploadFile()
     {
         if ($this->updateMode){
@@ -18,3 +18,4 @@ SliderComponent.php::
         $filename = $this->image->hashName();
         $this->image->storeAs('uploads', $filename, 'public');  
     }
+::
