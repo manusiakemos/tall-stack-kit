@@ -4,7 +4,7 @@ Tall Stack Kit Docs
 File Upload Example
 -----------------
 
-SliderComponent.php::
+SliderComponent.php code::
     use WithFileUploads;
     public $image;
 
@@ -18,4 +18,4 @@ SliderComponent.php::
         $filename = $this->image->hashName();
         $this->image->storeAs('uploads', $filename, 'public');  
     }
-::
+:: rst
